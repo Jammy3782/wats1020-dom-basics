@@ -3,34 +3,6 @@
 // Fortune Cookie Generator
 //
 //////////////////////////////////////////
-
-VAR generateFortuneCookie = function(){
-  // Fortune Cookie Generator 
-<button Onclick="generateFortuneCookie()">ClickMe </button>
-var generateFortuneCookie = function() {
-  console.log ("button clicked");
-  
-VAR cookieContainer = document.getElementByID ("fortune-cookie.text");
-VAR fortuneText = document.getElementbyID ("fortune-cookie.text");
-VAR previousFortuneContainer = document.getelementbyID ("previousfortunecontainer");
-  
-// New list element . 
-VAR NewItem document.createlement ("li")
-// Inner HTML has been set to InnerHTML within the fortune cookie text element. 
-NewItem.InnerHTML =fortuneCookieText.InnerHTML
-// appenchild node used to replace previous node. 
-previousfortunecontainer.apendchild (new Item);
-  
-// Math.Floor and Math.random to generate various items from the array.
-VAR RandIndex = Math.Floor(Math.random()* fortunesList.Length); 
-get_random([2,3,5])
-VAR newFortune = fortunesList [randIndex]
-FortuneText.innerHTML= newFortune; 
-}
-
-
-}
-
 // The following data list is provided for you to use in your code.
 var fortunesList = [
     "People are naturally attracted to you.",
@@ -85,6 +57,30 @@ var fortunesList = [
     "Joys are often the shadows, cast by sorrows.",
     "Fortune favors the brave."
 ]
+// generate fortune cookie defined 
+var generateFortuneCookie = function() {
+  console.log ("button clicked");
+  
+
+var fortuneText = document.getElementById("fortune-cookie-text");
+
+  
+// New list element . 
+var newItem = document.createElement("li"); 
+// Inner HTML has been set to InnerHTML within the fortune cookie text element. 
+newItem.innerHTML =fortuneText.innerHTML; 
+// appenchild node used to replace previous node. 
+var previousFortuneContainer = document.getElementById("previous-fortunes-container"); previousFortuneContainer.appendChild(newItem);
+  
+// Math.Floor and Math.random to generate various items from the js array.
+var randIndex = Math.floor(Math.random()* fortunesList.length); 
+
+var newFortune = fortunesList[randIndex]; 
+fortuneText.innerHTML= newFortune; 
+
+}
+
+// The following data list is provided for you to use in your code.
 
     // This is where your code for the Fortune Cookie generator goes.
     // You will use the fortunesList variable defined lower in this file
